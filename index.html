@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simran Sah | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #22d3ee, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-link:hover {
+            color: #22d3ee;
+        }
+
+        .skill-chip {
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .skill-chip:hover {
+            background: rgba(34, 211, 238, 0.3);
+            transform: translateY(-2px);
+            border-color: #22d3ee;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            transition: all 0.3s ease;
+        }
+
+        /* Timeline Styling */
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 2px;
+            height: 100%;
+            background: #1e293b;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.35rem;
+            top: 0.5rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #22d3ee;
+            border: 2px solid #0f172a;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22d3ee;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold gradient-text tracking-tighter">SIMRAN.</div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link transition">Home</a>
+                <a href="#skills" class="nav-link transition">Skills</a>
+                <a href="#experience" class="nav-link transition">Experience</a>
+                <a href="#portfolio" class="nav-link transition">Portfolio</a>
+                <a href="#contact" class="nav-link transition">Contact</a>
+            </div>
+            <a href="/files/CV.pdf"
+                class="bg-cyan-500 hover:bg-cyan-600 px-5 py-2 rounded-full text-sm font-semibold transition shadow-lg shadow-cyan-500/20">Download
+                CV</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right" data-aos-duration="1000">
+                <h2 class="text-cyan-400 text-xl font-semibold mb-4 tracking-widest uppercase">Senior Flutter Developer
+                </h2>
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">I'm <span class="gradient-text">Simran
+                        Sah</span></h1>
+                <p class="text-slate-400 text-lg mb-8 leading-relaxed max-w-lg">
+                    Specializing in building high-performance Flutter applications and logical, beautiful graphic
+                    designs. Turning ideas into interactive digital experiences.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact"
+                        class="bg-indigo-600 hover:bg-indigo-700 px-8 py-3 rounded-xl font-bold transition">Hire Me</a>
+                    <a href="#portfolio"
+                        class="border border-slate-700 hover:bg-slate-800 px-8 py-3 rounded-xl font-bold transition">View
+                        Portfolio</a>
+                </div>
+            </div>
+            <div class="relative mt-10 md:mt-0" data-aos="zoom-in" data-aos-duration="1200">
+                <div
+                    class="w-64 h-64 md:w-[420px] md:h-[420px] mx-auto rounded-full overflow-hidden border-8 border-slate-800 shadow-2xl relative z-10">
+                    <img src="img/ss.jpeg" alt="Simran Sah"
+                        class="w-full h-full object-cover object-top scale-105 bg-slate-800 transition duration-500 hover:scale-110">
+                </div>
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[105%] h-[105%] border border-cyan-500/10 rounded-full hidden md:block">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="py-24 bg-slate-900/50 border-y border-slate-800 px-6">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold uppercase tracking-widest">My <span class="text-cyan-400">Expertise</span>
+                </h2>
+                <p class="text-slate-500 mt-2 italic">Technical Arsenal & Creative Toolbox</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Flutter Card -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-mobile-alt text-cyan-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Flutter Development</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Flutter</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Dart</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">GetX</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Provider</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Riverpod</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Bloc</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">REST APIs</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">GraphQL</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">MVC</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">WebSockets</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Push Notifications</span>
+                    </div>
+                </div>
+
+                <!-- Backend Card -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-cloud text-indigo-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Backend & Cloud</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Firebase</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Firestore</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Google Cloud</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">MongoDB</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">MySQL</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Stripe</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Twilio</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Maps API</span>
+                    </div>
+                </div>
+
+                <!-- Languages Card -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-code text-purple-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Languages</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Dart</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">JavaScript</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">HTML5</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">CSS3</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">JSON</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">SQL</span>
+                    </div>
+                </div>
+
+                <!-- DevOps & Tools -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-tools text-orange-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Cloud & Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Git/GitHub</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">CI/CD Actions</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Docker</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Render</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Postman</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Trello/Slack</span>
+                    </div>
+                </div>
+
+                <!-- Testing & Debugging -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-vial text-green-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Testing & QA</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Unit Testing</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Widget Testing</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Integration Testing</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Flutter DevTools</span>
+                    </div>
+                </div>
+
+                <!-- Designing Tools -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-paint-brush text-pink-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Designing Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Photoshop</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Illustrator</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Figma</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Adobe Premier Pro</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="bg-slate-800/50 p-6 rounded-2xl border border-slate-700" data-aos="fade-up"
+                    data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <i class="fas fa-lightbulb text-yellow-400 text-2xl mr-3"></i>
+                        <h3 class="text-xl font-bold">Soft Skills</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Problem-Solving</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Analytical Thinking</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Cross-functional Collab</span>
+                        <span class="skill-chip px-3 py-1 rounded-full text-xs">Time Management</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PROFESSIONAL EXPERIENCE SECTION -->
+    <section id="experience" class="py-24 px-6 bg-slate-900">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold uppercase tracking-widest">Professional <span
+                        class="text-cyan-400">Experience</span></h2>
+                <div class="w-24 h-1 bg-cyan-500 mx-auto mt-4"></div>
+            </div>
+
+            <div class="timeline-container">
+
+                <!-- Lab Health -->
+                <div class="timeline-item relative mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Sr. Flutter Developer</h3>
+                        <span class="text-cyan-400 font-semibold">Jan 2025 - Present</span>
+                    </div>
+                    <p class="text-indigo-400 font-medium mb-3">Lab Health | Kathmandu</p>
+                    <ul class="text-slate-400 space-y-2 list-disc ml-5">
+                        <li>Working on Lab-Health Mobile and Web application which has the purpose of collecting data
+                            and providing health facilities.</li>
+                        <li>Working on Jai Prakash Hospital District Hospital - Bhopal, a Governmental project of India,
+                            a Web application.</li>
+                    </ul>
+                </div>
+
+                <!-- CodeHive -->
+                <div class="timeline-item relative mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Flutter Developer (Project Based)</h3>
+                        <span class="text-cyan-400 font-semibold">Jan 2025 - July 2025</span>
+                    </div>
+                    <p class="text-indigo-400 font-medium mb-3">CodeHive | Dubai, UAE (Remote)</p>
+                    <ul class="text-slate-400 space-y-2 list-disc ml-5">
+                        <li>Developed a multi-module Occasion Application with dynamic event scheduling and real-time
+                            notifications.</li>
+                        <li>Implemented GetX state management and RestApi integration, enhancing app responsiveness and
+                            data sync accuracy.</li>
+                    </ul>
+                </div>
+
+                <!-- Abovio -->
+                <div class="timeline-item relative mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Flutter Developer</h3>
+                        <span class="text-cyan-400 font-semibold">July 2024 - Dec 2025</span>
+                    </div>
+                    <p class="text-indigo-400 font-medium mb-3">Abovio and Company Pvt.Ltd | Kathmandu, Nepal</p>
+                    <ul class="text-slate-400 space-y-2 list-disc ml-5">
+                        <li>Worked on Ride Sharing Application namely **YAATROO**.</li>
+                        <li>Built separate interfaces for passengers and drivers, ensuring seamless interactions and
+                            real-time updates.</li>
+                        <li>Integrated Google Maps & Baato API for route optimization, location tracking, and ride
+                            distance calculations.</li>
+                        <li>Enabled real-time driver tracking and ride updates using WebSockets.</li>
+                    </ul>
+                </div>
+
+                <!-- Channakhya -->
+                <div class="timeline-item relative mb-12" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Flutter Developer</h3>
+                        <span class="text-cyan-400 font-semibold">March 2022 - April 2023</span>
+                    </div>
+                    <p class="text-indigo-400 font-medium mb-3">Channakhya Software | Kathmandu, Nepal</p>
+                    <ul class="text-slate-400 space-y-2 list-disc ml-5">
+                        <li>Developed a Loyalty Application: Built a customer rewards and loyalty program with seamless
+                            user engagement features.</li>
+                        <li>Implemented Firebase Cloud Messaging (FCM) for real-time push notifications.</li>
+                        <li>Enabled biometric authentication (Fingerprint) for secure and convenient user login.</li>
+                    </ul>
+                </div>
+
+                <!-- Suktas -->
+                <div class="timeline-item relative" data-aos="fade-up">
+                    <div class="flex flex-col md:flex-row md:justify-between mb-2">
+                        <h3 class="text-xl font-bold text-white">Flutter Intern</h3>
+                        <span class="text-cyan-400 font-semibold">Aug 2021 - Feb 2022</span>
+                    </div>
+                    <p class="text-indigo-400 font-medium mb-3">Suktas InfoTech | Biratnagar, Nepal</p>
+                    <ul class="text-slate-400 space-y-2 list-disc ml-5">
+                        <li>Worked on A Suktas-Academia Project which was a school application.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 px-6 bg-slate-900/50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-bold uppercase tracking-widest">My <span class="text-cyan-400">Portfolio</span>
+                </h2>
+                <p class="text-slate-400 mt-4">A collection of Flutter applications and creative designs</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Item 1 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden project-card border border-slate-700 group"
+                    data-aos="fade-up">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="img/microbe.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="App Project">
+                        <div
+                            class="absolute inset-0 bg-slate-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center space-x-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.labhealth.themicrobe"
+                                target="_blank"
+                                class="w-10 h-10 bg-cyan-500 rounded-full flex items-center justify-center transition hover:bg-cyan-400"><i
+                                    class="fab fa-google-play"></i></a>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">Microbe Diagnostics</h4>
+                        <p class="text-cyan-400 text-xs font-semibold mb-4 uppercase tracking-tighter">Flutter Mobile
+                            App</p>
+                        <div class="flex flex-col gap-2 border-t border-slate-700 pt-4">
+                            <a href="https://play.google.com/store/apps/details?id=com.labhealth.themicrobe"
+                                target="_blank"
+                                class="flex items-center gap-2 bg-slate-900 px-3 py-2 rounded-lg border border-slate-700 transition hover:bg-black justify-center">
+                                <i class="fab fa-google-play text-lg"></i>
+                                <span class="text-xs font-bold">VIEW ON PLAY STORE</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 2 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden project-card border border-slate-700 group"
+                    data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="img/cover_lertter.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Web App">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">LabHealth Web</h4>
+                        <p class="text-cyan-400 text-xs font-semibold mb-4 uppercase tracking-tighter">Web Application
+                        </p>
+                        <div class="flex flex-col gap-2 border-t border-slate-700 pt-4">
+                            <a href="https://app.labhealth.org/" target="_blank"
+                                class="text-center bg-slate-900 border border-slate-700 py-2 rounded-lg text-xs font-bold transition hover:bg-black">LAUNCH
+                                WEB APP</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Item 3 -->
+                <div class="bg-slate-800 rounded-2xl overflow-hidden project-card border border-slate-700 group"
+                    data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="img/aaa.png"
+                            class="w-full h-full object-cover transition duration-500 group-hover:scale-110"
+                            alt="Design">
+                    </div>
+                    <div class="p-6">
+                        <h4 class="text-xl font-bold mb-1">UX/UI Designs</h4>
+                        <p class="text-cyan-400 text-xs font-semibold mb-4 uppercase tracking-tighter">Figma • Branding
+                            • Motion</p>
+                        <div class="flex flex-col gap-2 border-t border-slate-700 pt-4">
+                            <a href="https://www.figma.com/design/2tROeeq2PU44GxLZZBaaVy/loyalty-dev-?node-id=0-1"
+                                target="_blank"
+                                class="text-center bg-indigo-600/20 border border-indigo-500/50 py-2 rounded-lg text-xs font-bold transition hover:bg-indigo-600">VIEW
+                                FIGMA CASE STUDY</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-bold mb-6 tracking-widest uppercase text-white">Let's <span
+                            class="text-cyan-400">Connect</span></h2>
+                    <p class="text-slate-400 text-lg mb-10">Available for freelance and full-time opportunities.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-slate-800 flex items-center justify-center rounded-xl text-cyan-400 border border-slate-700">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <p class="text-lg">simransah314@gmail.com</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-slate-800 flex items-center justify-center rounded-xl text-cyan-400 border border-slate-700">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <a href="https://www.linkedin.com/in/simran-sah-b810761ab/" target="_blank"
+                                class="text-lg hover:text-cyan-400 transition">LinkedIn Profile</a>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div
+                                class="w-12 h-12 bg-slate-800 flex items-center justify-center rounded-xl text-cyan-400 border border-slate-700">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <a href="https://github.com/simranshahh" target="_blank"
+                                class="text-lg hover:text-cyan-400 transition">GitHub Profile</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/30 p-8 rounded-3xl border border-slate-700 text-center" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold mb-4">Message Me</h3>
+                    <p class="text-slate-400 mb-6">Want to collaborate? Send me an email directly!</p>
+                    <a href="mailto:simransah314@gmail.com"
+                        class="inline-block bg-gradient-to-r from-cyan-500 to-indigo-600 px-10 py-4 rounded-xl font-bold tracking-widest hover:scale-105 transition">SEND
+                        EMAIL</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 bg-slate-950 text-center px-6">
+        <div class="container mx-auto">
+            <div class="text-2xl font-bold gradient-text mb-4">SIMRAN SAH</div>
+            <p class="text-slate-500 text-sm">&copy; 2024. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- AOS Script script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, easing: 'ease-in-out' });
+    </script>
+</body>
+
+</html>
